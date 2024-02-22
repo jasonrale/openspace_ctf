@@ -36,7 +36,7 @@ contract VaultExploiter is Test {
         vaultHacker.deposit{value: 0.1 ether}();
         vaultHacker.withdraw();
 
-        require(vault.isSolve(), "solved");
+        require(vault.isSolve(), "not solved");
         vm.stopPrank();
     }
 

